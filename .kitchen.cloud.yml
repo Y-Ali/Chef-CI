@@ -13,15 +13,17 @@ driver:
 #   ssh_key: ~/.ssh/DevOpsStudents.pem
 verifier:
   name: inspec
+
 platforms:
     name: ubuntu-16.04
     driver:
       box: ubuntu/xenial64
+
 suites:
-    name: default
-    run_list:
-      - recipe[node::default]
-    verifier:
-      inspec_tests:
-        - test/integration/default
-    attributes:
+  name: default
+  run_list:
+    - recipe[node::default]
+  verifier:
+    inspec_tests:
+      - test/integration/default
+  attributes:
